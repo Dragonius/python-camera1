@@ -5,8 +5,8 @@ import numpy as np
 def nothing(pos):
 	pass
 
-cap=cv2.VideoCapture(1,cv2.CAP_DSHOW)
-x_o= 0
+cap=cv2.VideoCapture(0,cv2.CAP_DSHOW)
+x_o= 320
 y_o= 240
 x_d=0.0
 y_d=0.0
@@ -19,8 +19,10 @@ while(1):
 	#converting frame(img i.e BGR) to HSV (hue-saturation-value)
 
 	hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-	blue_lower=np.array([0,62,113],np.uint8)
-	blue_upper=np.array([255,255,255],np.uint8)
+	#blue_lower=np.array([0,62,113],np.uint8)
+	#blue_upper=np.array([255,255,255],np.uint8)
+	blue_lower=np.array([42,108,95],np.uint8)
+	blue_upper=np.array([179,177,227],np.uint8)
 
 
 	blue=cv2.inRange(hsv,blue_lower,blue_upper)
